@@ -1,0 +1,45 @@
+{
+  "name": "digital-strike/strike-theme",
+  "description": "Boilerplate WordPress project",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Matthew Schroeter",
+      "email": "matthew@digitalstrike.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "sincspecv/wp-acf-to-post": "0.1.4",
+    "digital-strike/advanced-custom-fields-pro": "5.9.3",
+    "digital-strike/gravityforms": "2.4.21",
+    "littlebizzy/speed-demon": "1.4.0",
+    "roots/soil": "^3.9",
+    "wpackagist-plugin/wordpress-seo": "^15.1.1",
+    "wpackagist-plugin/redirection": "4.9.2",
+    "wpackagist-plugin/simple-custom-post-order": "2.5.2",
+    "wpackagist-plugin/display-html-sitemap":"1.0.5"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:sincspecv/WP-ACF-To-Post.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@gitlab.com:digital-strike/advanced-custom-fields-pro.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@gitlab.com:digital-strike/gravityforms.git"
+    }
+  ],
+  "scripts": {
+    "post-install-cmd": "bash post-install.sh"
+  }
+}

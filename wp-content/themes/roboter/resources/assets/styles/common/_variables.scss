@@ -1,0 +1,106 @@
+/** Type Scale https://type-scale.com **/
+$xx-jumbo: 3.815rem; // 68.66px
+$x-jumbo:  3.052rem; // 54.93px
+$jumbo:    2.441rem; // 43.95px
+$xx-large: 1.953rem; // 35.16px
+$x-large:  1.563rem; // 28.13px
+$large:    1.25rem;  // 22.50px
+$normal:   1rem;     // 18.00px
+$small:    0.8rem;   // 14.40px
+$x-small:  0.64rem;  // 11.52px
+$tiny:     0.512rem; // 9.22px
+
+/** Colors **/
+$accent-color: #fdbd25;
+$light-gray: #e6e7e8;
+$medium-gray: #929292;
+$dark-gray: #333;
+$black: #222;
+$white: #fff;
+$foundation-palette: (
+  primary: #036571,
+  secondary: #008e8c,
+  accent: $accent-color,
+  success: #3adb76,
+  warning: #fdbd25,
+  alert: #cc4b37,
+);
+
+$light-color: $light-gray;
+$medium-color: #008e8c;
+$dark-color: #036571;
+
+/** Breakpoints **/
+$breakpoints: (
+  small: 0,
+  shmedium: 480px,
+  gfmobile: 641px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1280px,
+  xxlarge: 1440px,
+);
+
+/** Font Sizes **/
+$header-lineheight: 0.947;
+$header-margin-bottom: $tiny;
+$header-styles: (
+  "small": (
+    "h1": ("font-size": $jumbo, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h2": ("font-size": $xx-large, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h3": ("font-size": $x-large, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h4": ("font-size": $large, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h5": ("font-size": $normal, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h6": ("font-size": $small, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom)
+  ),
+  "medium": (
+    "h1": ("font-size": $x-jumbo, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h2": ("font-size": $jumbo, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h3": ("font-size": $x-large, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h4": ("font-size": $large, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h5": ("font-size": $normal, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom),
+    "h6": ("font-size": $small, "line-height": $header-lineheight, "margin-top": 0, "margin-bottom": $header-margin-bottom)
+  ),
+);
+
+$lead-font-size: $large;
+$paragraph-lineheight: 1.4;
+$lead-lineheight: 1.4;
+
+/** Fonts **/
+$body-font-family: "degular", Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: "sofia-pro", Helvetica, Roboto, Arial, sans-serif;
+$header-font-weight: 900;
+
+/** Buttons **/
+$button-padding: $small $normal;
+$button-sizes: (
+  tiny: $x-small,
+  small: $small,
+  default: $normal,
+  large: $large
+);
+$button-palette: $foundation-palette;
+$button-color: $white;
+
+$button-group-spacing: $small;
+
+$closebutton-offset-horizontal: (
+  small: $small,
+  medium: $normal
+);
+$closebutton-offset-vertical: (
+  small: $tiny,
+  medium: $x-small
+);
+$closebutton-size: (
+  small: $x-large,
+  medium: $xx-large
+);
+
+/** Global Foundation Overrides **/
+$global-width: 1236px;
+$global-margin: $normal;
+$global-padding: $normal;
+$global-radius: 4px;
+$grid-margin-gutters: $x-large;

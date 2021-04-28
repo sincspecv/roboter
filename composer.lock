@@ -1,0 +1,321 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ca75a961c286ded609ecf181a728603f",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
+                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
+                "shasum": ""
+            },
+            "replace": {
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Composer\\Installers\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "TYPO3 CMS",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "agl",
+                "cakephp",
+                "codeigniter",
+                "drupal",
+                "fuelphp",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "li3",
+                "lithium",
+                "mako",
+                "modulework",
+                "phpbb",
+                "ppi",
+                "silverstripe",
+                "symfony",
+                "wordpress",
+                "zend"
+            ],
+            "time": "2013-08-20T04:37:09+00:00"
+        },
+        {
+            "name": "digital-strike/advanced-custom-fields-pro",
+            "version": "v5.9.3",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:digital-strike/advanced-custom-fields-pro.git",
+                "reference": "cc03f72e3922b6e758853c6532adca4380b1d962"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/digital-strike%2Fadvanced-custom-fields-pro/repository/archive.zip?sha=cc03f72e3922b6e758853c6532adca4380b1d962",
+                "reference": "cc03f72e3922b6e758853c6532adca4380b1d962",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "v1.0.6"
+            },
+            "type": "wordpress-plugin",
+            "support": {
+                "issues": "https://gitlab.com/api/v4/projects/19931161/issues"
+            },
+            "time": "2020-11-17T16:57:09+00:00"
+        },
+        {
+            "name": "digital-strike/gravityforms",
+            "version": "v2.4.21",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:digital-strike/gravityforms.git",
+                "reference": "ce8c5a463d1f3a06081d4ea56d4c8932104543c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/digital-strike%2Fgravityforms/repository/archive.zip?sha=ce8c5a463d1f3a06081d4ea56d4c8932104543c3",
+                "reference": "ce8c5a463d1f3a06081d4ea56d4c8932104543c3",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "v1.0.6"
+            },
+            "type": "wordpress-plugin",
+            "support": {
+                "issues": "https://gitlab.com/api/v4/projects/18059273/issues"
+            },
+            "time": "2020-10-15T21:06:50+00:00"
+        },
+        {
+            "name": "littlebizzy/speed-demon",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/littlebizzy/speed-demon.git",
+                "reference": "ec900007cdd81cefc0cac2a04bb09c4ced8f333e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/littlebizzy/speed-demon/zipball/ec900007cdd81cefc0cac2a04bb09c4ced8f333e",
+                "reference": "ec900007cdd81cefc0cac2a04bb09c4ced8f333e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.",
+            "homepage": "https://www.littlebizzy.com/plugins/speed-demon",
+            "keywords": [
+                "bloat",
+                "improve",
+                "loading time",
+                "optimization",
+                "optimize",
+                "performance",
+                "plugin",
+                "reduce",
+                "speed",
+                "speed up",
+                "wordpress"
+            ],
+            "time": "2020-01-07T17:08:39+00:00"
+        },
+        {
+            "name": "roots/soil",
+            "version": "3.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/soil.git",
+                "reference": "63dcd6e1754a4c806ce3d3077b44d908c58b374e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/soil/zipball/63dcd6e1754a4c806ce3d3077b44d908c58b374e",
+                "reference": "63dcd6e1754a4c806ce3d3077b44d908c58b374e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                },
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                }
+            ],
+            "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
+            "homepage": "https://roots.io/plugins/soil/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2019-12-07T22:25:02+00:00"
+        },
+        {
+            "name": "sincspecv/WP-ACF-To-Post",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sincspecv/WP-ACF-To-Post.git",
+                "reference": "e99eeda71ab8787e0ee9ee6bb5e117ce49130833"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sincspecv/WP-ACF-To-Post/zipball/e99eeda71ab8787e0ee9ee6bb5e117ce49130833",
+                "reference": "e99eeda71ab8787e0ee9ee6bb5e117ce49130833",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "v1.0.6"
+            },
+            "type": "wordpress-plugin",
+            "support": {
+                "source": "https://github.com/sincspecv/WP-ACF-To-Post/tree/v0.1.4",
+                "issues": "https://github.com/sincspecv/WP-ACF-To-Post/issues"
+            },
+            "time": "2020-09-14T16:53:23+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/display-html-sitemap",
+            "version": "1.0.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/display-html-sitemap/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/display-html-sitemap.zip?timestamp=1592907778"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/display-html-sitemap/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "4.9.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/4.9.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.9.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-custom-post-order",
+            "version": "2.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-custom-post-order/",
+                "reference": "tags/2.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.2.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "15.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/15.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

@@ -1,0 +1,79 @@
+.nav-primary {
+  padding: 0;
+  background: transparent;
+
+  .menu-item {
+    a {
+      color: $primary-color;
+      font-weight: bold;
+      font-family: $header-font-family;
+      padding: $large $x-jumbo;
+
+      &:hover {
+        color: $secondary-color;
+      }
+
+      @media screen and (max-width: 1260px) {
+        padding: $normal $xx-large;
+      }
+    }
+
+    &.active {
+      > a {
+        color: $secondary-color;
+      }
+    }
+
+    &:last-of-type {
+      border-right: 1px solid $white;
+    }
+
+    &.menu-item-has-children {
+      position: relative;
+
+      > .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        background: $white;
+        display: none;
+
+        .menu-item {
+          border: 0;
+          min-width: 100%;
+          width: auto;
+          flex: 1;
+
+          a {
+            color: $primary-color;
+            width: 100%;
+            white-space: nowrap;
+            padding: $normal $x-jumbo;
+          }
+
+          > .submenu {
+            left: 100%;
+            top: 0;
+            width: 100%;
+            border-left: 1px solid $white;
+          }
+        }
+      }
+
+      &:hover {
+        > .submenu {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+.svg-logo {
+  height: 100%;
+
+  svg {
+    height: 100%;
+  }
+}

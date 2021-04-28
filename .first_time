@@ -1,0 +1,1 @@
+# This file detects if this is the start of a project. It's used in post-install.sh, but you can probably ignore it.

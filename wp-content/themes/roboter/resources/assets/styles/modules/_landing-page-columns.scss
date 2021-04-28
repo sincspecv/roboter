@@ -1,0 +1,119 @@
+.lp-columns {
+  padding-top: 5.96rem;
+  padding-bottom: 5.96rem;
+
+  .content-container {
+    h2 {
+      color: $dark-color;
+      line-height: 1.024;
+      margin-bottom: $xx-large;
+    }
+
+    .lead {
+      margin-bottom: $large;
+    }
+  }
+
+  .column {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    &__image {
+      background-size: cover !important;
+      background-position: center !important;
+      padding-top: 5.96rem;
+      padding-bottom: 5.96rem;
+    }
+
+    &__text {
+      padding-left: 0;
+      padding-right: 0;
+
+      h3 {
+        color: $dark-color;
+      }
+    }
+  }
+
+  .button-container {
+    .button {
+      margin-bottom: 0;
+      font-weight: bold;
+      padding-left: $x-large;
+      padding-right: $x-large;
+
+      &:not(.hollow) {
+        color: $white;
+      }
+    }
+  }
+
+  &.light {
+    background: $light-color;
+  }
+
+  &.medium {
+    background: $medium-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+    }
+
+    .column {
+      &__text {
+        color: $white;
+
+        h3 {
+          color: $white;
+        }
+      }
+    }
+
+    a:hover {
+      color: darken($white, 15);
+
+      h3,
+      .column__text {
+        color: darken($white, 15);
+      }
+    }
+  }
+
+  &.dark {
+    background: $dark-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+    }
+
+    .column {
+      &__text {
+        color: $white;
+        transition: all 0.1s ease-in-out;
+
+        h3 {
+          color: $white;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+
+    a:hover {
+      color: darken($white, 15);
+
+      h3,
+      .column__text {
+        color: darken($white, 15);
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.image-grid {
+  padding-top: 5.96rem;
+  padding-bottom: 5.96rem;
+
+  .image-grid-item {
+    background-size: cover !important;
+    height: 100%;
+    padding-bottom: 50%;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+  }
+
+  &__lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    background: rgba($black, 0.94);
+    display: none;
+
+    .grid-container {
+      position: relative;
+      height: 100%;
+    }
+
+    .lightbox-close-button {
+      position: absolute;
+      top: $large;
+      right: $large;
+      z-index: 10001;
+      cursor: pointer;
+
+      span {
+        color: $white;
+        font-size: $xx-large;
+        transition: all 0.1s ease-in-out;
+      }
+
+      &:hover {
+        span {
+          color: darken($white, 15);
+        }
+      }
+    }
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+
+    &-slide {
+      height: 100%;
+    }
+
+    &-container {
+      width: 100%;
+      margin-left: 0;
+      list-style: none;
+
+      > div {
+        display: block;
+      }
+    }
+
+    &-figure {
+      background: transparent;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: $xx-large;
+
+      img {
+        max-height: 60vh;
+        padding: $x-large;
+      }
+
+      figcaption {
+        color: $white;
+        width: 100%;
+        max-height: 30vh;
+        overflow-y: auto;
+        padding-left: $x-large;
+        padding-right: $x-large;
+
+        .image-slider-subtitle {
+          display: block;
+          font-size: $large;
+          margin-bottom: $small;
+        }
+      }
+    }
+
+    &-controls {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+
+      .arrows {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        button {
+          cursor: pointer;
+          width: 48px;
+          height: 48px;
+        }
+
+        .chevron-solid {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

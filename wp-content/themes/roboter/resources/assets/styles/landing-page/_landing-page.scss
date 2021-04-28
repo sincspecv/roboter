@@ -1,0 +1,9 @@
+body.template-landing-page {
+  margin-top: 0;
+  margin-bottom: $xx-jumbo;
+
+  @include breakpoint(large) {
+    margin-top: 107.29px;
+    margin-bottom: 0;
+  }
+}

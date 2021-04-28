@@ -1,0 +1,32 @@
+# System files
+.DS_Store
+
+# Editor files
+.idea
+
+# Machine dependent configuration
+env.ini
+
+# Composer packages
+vendor
+
+# Wordpress
+wp
+wp-content/plugins/*
+!wp-content/plugins/roboter
+wp-content/themes/*
+!wp-content/themes/roboter
+wp-content/uploads
+wp-content/upgrade
+wp-content/debug.log
+
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+wp-content/themes/roboter/.cache-loader
+wp-content/themes/roboter/dist
+wp-content/themes/roboter/node_modules
+wp-content/themes/roboter/npm-debug.log
+wp-content/themes/roboter/yarn-error.log
+wp-content/themes/roboter/vendor
+wp-content/themes/roboter/resources/assets/config-local.json
+/.gitlab-ci.yml

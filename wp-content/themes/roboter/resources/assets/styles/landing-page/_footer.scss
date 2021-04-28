@@ -1,0 +1,94 @@
+.lp-footer {
+  background: $medium-color;
+  padding-top: $jumbo;
+  padding-bottom: $jumbo;
+  color: $white;
+
+  &__phone {
+    display: block;
+    color: $accent-color;
+    font-size: $x-large;
+    font-family: $header-font-family;
+    transition: color 0.1s ease-in-out;
+    margin-bottom: $normal;
+
+    &:hover {
+      color: darken($accent-color, 15);
+    }
+  }
+
+  &__address {
+    margin-bottom: $normal;
+  }
+
+  &__copyright {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  &__form {
+    background: $white;
+    padding: $x-jumbo;
+    border-radius: 30px;
+
+    h3 {
+      color: $dark-color;
+      text-align: center;
+      line-height: 1.024;
+    }
+
+    .gfield {
+      padding-right: 0 !important;
+
+      label {
+        font-size: $small;
+        font-weight: normal;
+        color: $dark-color;
+      }
+
+      input {
+        padding-left: 22.5px !important;
+        border-radius: 5000px;
+        border-color: $medium-gray;
+      }
+    }
+
+    .gform_footer {
+      input[type=submit] {
+        background: get-color(accent);
+        border-radius: 5000px;
+        font-weight: bold;
+
+        &:hover {
+          background: darken(get-color(accent), 15);
+        }
+
+        @include breakpoint(gfmobile up) {
+          min-width: 50%;
+        }
+      }
+    }
+
+    @include breakpoint(shmedium down) {
+      padding: $xx-large;
+    }
+  }
+
+  &__image {
+    figure {
+      text-align: center;
+
+      img {
+        max-height: 500px;
+        width: auto;
+      }
+    }
+  }
+
+  .location-info {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}

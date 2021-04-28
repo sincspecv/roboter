@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+  font-size: calc(14px + 4 * ((100vw - 320px) / 960));
+  overscroll-behavior: none;
+
+  @include breakpoint(large) {
+    font-size: 18px;
+  }
+
+  @include breakpoint(shmedium down) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

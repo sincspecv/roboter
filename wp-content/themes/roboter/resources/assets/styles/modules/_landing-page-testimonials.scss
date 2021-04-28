@@ -1,0 +1,151 @@
+.lp-testimonials {
+  padding-top: 5.96rem;
+  padding-bottom: 5.96rem;
+
+  .content-container {
+    h2 {
+      color: $dark-color;
+      line-height: 1.024;
+      margin-bottom: $xx-large;
+    }
+
+    .lead {
+      margin-bottom: $xx-large;
+    }
+  }
+
+  .testimonial {
+    border: 0;
+    background: $dark-color;
+    color: $white;
+    position: relative;
+    padding: $jumbo $large $x-large;
+    overflow: visible;
+    border-radius: 13px;
+
+    &__quote {
+      position: absolute;
+      top: -#{$normal};
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      background: $dark-color;
+      border-radius: 5000px;
+      width: 4.768rem;
+      height: 4.768rem;
+      padding: 0;
+      z-index: 0;
+
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      svg {
+        width: $jumbo;
+        height: $jumbo;
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__attribution {
+    position: relative;
+
+    span {
+      display: block;
+      font-family: $header-font-family;
+      color: $dark-color;
+      text-transform: uppercase;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: rgba($medium-color, 0.15);
+      width: $x-large;
+      height: 2px;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .button-container {
+    .button {
+      margin-bottom: 0;
+      font-weight: bold;
+      padding-left: $x-large;
+      padding-right: $x-large;
+
+      &:not(.hollow) {
+        color: $white;
+      }
+    }
+  }
+
+  &.light {
+    background: $light-color;
+  }
+
+  &.medium {
+    background: $medium-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+    }
+
+    .testimonial {
+      background: $white;
+      color: $medium-color;
+
+      &__quote {
+        background: $white;
+
+        svg {
+          path {
+            fill: $medium-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    background: $dark-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+    }
+
+    .testimonial {
+      background: $white;
+      color: $dark-color;
+
+      &__quote {
+        background: $white;
+
+        svg {
+          path {
+            fill: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}

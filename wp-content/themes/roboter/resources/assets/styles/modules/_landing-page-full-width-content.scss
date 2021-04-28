@@ -1,0 +1,149 @@
+.lp-full-width {
+  position: relative;
+  padding-top: 5.96rem;
+  padding-bottom: 5.96rem;
+
+  .grid-container {
+    position: relative;
+    z-index: 0;
+  }
+
+  .content-container {
+    h2 {
+      margin-bottom: 1rem;
+      color: $dark-color;
+    }
+
+    .cta-title {
+      display: block;
+      font-size: $large;
+      color: $dark-color;
+      margin-bottom: $tiny;
+    }
+
+    .button {
+      margin-bottom: 0;
+      font-weight: bold;
+      padding-left: $x-large;
+      padding-right: $x-large;
+
+      &:not(.hollow) {
+        color: $white;
+      }
+    }
+  }
+
+  .form-container {
+    background: $dark-color;
+    padding: $x-jumbo;
+    border-radius: 30px;
+    margin-top: $normal;
+    margin-bottom: $normal;
+
+    h3 {
+      color: $white;
+      text-align: center;
+      line-height: 1.024;
+    }
+
+    .gfield {
+      padding-right: 0 !important;
+
+      label {
+        font-size: $small;
+        font-weight: normal;
+        color: $white;
+      }
+
+      input {
+        padding-left: 22.5px !important;
+        border-radius: 5000px;
+        border-color: $medium-gray;
+      }
+    }
+
+    .gform_footer {
+      input[type=submit] {
+        background: get-color(accent);
+        border-radius: 5000px;
+        font-weight: bold;
+
+        &:hover {
+          background: darken(get-color(accent), 15);
+        }
+
+        @include breakpoint(gfmobile up) {
+          min-width: 50%;
+        }
+      }
+    }
+
+    @include breakpoint(shmedium down) {
+      padding: $xx-large;
+    }
+  }
+
+  &.dark {
+    background: $dark-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+
+      .cta-title {
+        color: $white;
+      }
+    }
+
+    .form-container {
+      background: $white;
+
+      h3 {
+        color: $dark-color;
+      }
+
+      .gfield {
+        label {
+          color: $body-font-color;
+        }
+      }
+    }
+  }
+
+  &.medium {
+    background: $medium-color;
+
+    .content-container {
+      color: $white;
+
+      h2 {
+        color: $white;
+      }
+
+      .cta-title {
+        color: $white;
+      }
+    }
+
+    .form-container {
+      background: $white;
+
+      h3 {
+        color: $medium-color;
+      }
+
+      .gfield {
+        label {
+          color: $body-font-color;
+        }
+      }
+    }
+  }
+
+  &.light {
+    background: $light-color;
+  }
+}
