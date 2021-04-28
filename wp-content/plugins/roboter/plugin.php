@@ -10,7 +10,7 @@ Text Domain: digital-strike
 Domain Path: /lang
 */
 
-namespace DS;
+namespace TFR;
 
 require_once dirname(__FILE__) . '/autoload.php';
 
