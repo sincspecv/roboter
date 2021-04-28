@@ -1,6 +1,4 @@
-[![Digital Strike](https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/20986989_292534204558159_4523982442645684224_a.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=ZboHjw-EAfIAX8PS32X&oh=c40d89783f8411a2a0b92904b173585b&oe=5EB4B7CD)](https://www.digitalstrike.com)
-
-# Digital Strike Base Theme
+# Roboter Boilerplate
 This is a WordPress project boilerplate that utilizes the [Sage](https://roots.io/sage/) starter theme. It comes preloaded with necessary plugins and automatically installs and configures WordPress for you.
 
 ### Requirements
