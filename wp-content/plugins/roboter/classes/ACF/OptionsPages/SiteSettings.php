@@ -24,7 +24,7 @@ class SiteSettings {
 			'menu_slug'  => 'settings_menu',
 			'post_id'    => 'settings_menu',
 			'capability' => 'manage_options',
-			'icon_url'   => Plugin::$url . '/assets/ds_logo.svg'
+			'icon_url'   => Plugin::$url . '/assets/tfr_logo.svg'
 		]);
 
 		acf_add_options_sub_page([
