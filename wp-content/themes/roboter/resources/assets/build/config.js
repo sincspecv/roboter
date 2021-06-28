@@ -20,6 +20,7 @@ const config = merge({
     root: rootPath,
     assets: path.join(rootPath, 'resources/assets'),
     dist: path.join(rootPath, 'dist'),
+    critical: path.join(rootPath, 'critical'),
   },
   enabled: {
     sourceMaps: !isProduction,
