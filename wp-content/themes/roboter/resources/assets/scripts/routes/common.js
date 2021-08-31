@@ -1,4 +1,6 @@
 import Siema from 'siema';
+import '../util/lazyLoad';
+
 export default {
   init() {
     // JavaScript to be fired on all pages

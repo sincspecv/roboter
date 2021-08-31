@@ -34,7 +34,10 @@ class Bootstrap {
      * Add all WordPress action hooks
      */
     public static function hooks() {
-
+        // Hide ACF From Admin Menu
+        add_action('admin_menu', function() {
+            remove_menu_page('edit.php?post_type=acf-field-group');
+        });
     }
 
     /**
