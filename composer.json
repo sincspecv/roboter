@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": "^7.2",
-    "sincspecv/wp-acf-to-post": "0.1.4",
+    "sincspecv/wp-acf-to-post": "0.1.6",
     "digital-strike/advanced-custom-fields-pro": "5.9.3",
     "digital-strike/gravityforms": "2.4.21",
     "littlebizzy/speed-demon": "1.4.0",
