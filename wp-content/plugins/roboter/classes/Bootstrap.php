@@ -12,6 +12,8 @@ use TFR\PostTypes;
 
 class Bootstrap {
     public static function init() {
+        Filters::init();
+        
         self::hooks();
         self::filters();
         self::globals();

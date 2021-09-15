@@ -130,6 +130,13 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+
+    /**
+     * Custom image sizes
+     * @see https://developer.wordpress.org/reference/functions/add_image_size/
+     */
+    add_image_size('column_icon', 238, 238, true);
+    add_image_size('hero', 1900, 0, true);
 });
 
 /**
