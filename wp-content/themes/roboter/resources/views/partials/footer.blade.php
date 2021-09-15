@@ -1,5 +1,8 @@
-<footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
+<footer class="footer" id="colophon">
+  @include('partials.global-cta')
+
+  @include('partials.newsletter-signup')
+  <div class="grid-container">
+    @include('partials.footer-content')
   </div>
 </footer>

@@ -4,28 +4,23 @@
 
   .menu-item {
     a {
-      color: $primary-color;
-      font-weight: bold;
+      color: $body-font-color;
+      font-weight: normal;
       font-family: $header-font-family;
-      padding: $large $x-jumbo;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: $large $small;
 
       &:hover {
-        color: $secondary-color;
-      }
-
-      @media screen and (max-width: 1260px) {
-        padding: $normal $xx-large;
+        color: $primary-color;
       }
     }
 
     &.active {
       > a {
-        color: $secondary-color;
+        color: $primary-color;
+        background: transparent;
       }
-    }
-
-    &:last-of-type {
-      border-right: 1px solid $white;
     }
 
     &.menu-item-has-children {
@@ -46,10 +41,14 @@
           flex: 1;
 
           a {
-            color: $primary-color;
+            color: $body-font-color;
             width: 100%;
             white-space: nowrap;
             padding: $normal $x-jumbo;
+
+            &:hover {
+              color: $primary-color;
+            }
           }
 
           > .submenu {

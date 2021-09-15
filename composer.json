@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^7.3",
     "sincspecv/wp-acf-to-post": "0.1.6",
     "digital-strike/advanced-custom-fields-pro": "5.9.3",
     "digital-strike/gravityforms": "2.4.21",
