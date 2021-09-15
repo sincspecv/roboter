@@ -28,6 +28,17 @@ class App extends Controller
         if (is_404()) {
             return __('Not Found', 'sage');
         }
+        if(is_page()) {
+            $page_heading = get_field('page_heading') ? get_field('page_heading') : '';
+            $page_accent_heading = get_field('page_accent_heading') ? get_field('page_accent_heading') : '';
+
+            if( !empty($page_heading) || !empty($page_accent_heading) ) {
+                $title = '';
+                if(!empty($page_heading)) $title .= '<span class="small-h1">' . $page_heading . '</span>';
+                if(!empty($page_accent_heading)) $title .= '<span class="page-hero__heading-enhanced">' . $page_accent_heading . '</span>';
+                return $title ;
+            }
+        }
         return get_the_title();
     }
 
@@ -50,7 +61,7 @@ class App extends Controller
         $logo = '';
 
         if($img_type === 'file') {
-            $src = esc_url_raw($img['sizes']['medium']);
+            $src = $img['sizes']['medium'];
             $alt = esc_attr($img['alt']);
             $srcset = esc_attr(wp_get_attachment_image_srcset($img['id']), [300, 300]);
             $logo = '<img src="' . $src . '" srcset="' . $srcset . '" alt="' . $alt . '" />';
@@ -77,9 +88,17 @@ class App extends Controller
         gravity_form_enqueue_scripts($form_id);
     }
 
+    public function banner() {
+        $banner = new \stdClass();
+
+        $banner->button = get_field('banner_button', 'site_settings');
+
+        return json_decode(json_encode($banner));
+    }
+
     /**
      * Return object of social media links
-     * 
+     *
      * @return false|mixed
      */
     public function social_links() {
@@ -88,6 +107,49 @@ class App extends Controller
         }
 
         return json_decode(json_encode(get_field('social_accounts', 'site_settings')));
+    }
+
+    /**
+     * Return field values for global CTA
+     *
+     * @return false|mixed
+     */
+    public function global_cta() {
+        $global_cta = new \stdClass();
+
+        $global_cta->heading = get_field('global_cta_heading', 'site_settings');
+        $global_cta->subheading = get_field('global_cta_subheading', 'site_settings');
+        $global_cta->text = get_field('global_cta_text', 'site_settings');
+        $global_cta->button = get_field('global_cta_button', 'site_settings');
+        $global_cta->image = get_field('global_cta_image', 'site_settings');
+
+
+//        return $global_cta;
+        return json_decode(json_encode($global_cta));
+    }
+
+    /**
+     * Return field values for the footer
+     *
+     * @return false|mixed
+     */
+    public function footer() {
+        $footer = new \stdClass();
+
+        $footer->background_image = get_field('footer_background_img', 'site_settings');
+        $footer->form             = get_field('footer_form', 'site_settings');
+        $footer->form_title       = get_field('footer_form_title', 'site_settings');
+        $footer->content          = get_field('footer_content', 'site_settings');
+        $footer->image_type       = get_field('footer_img_type', 'site_settings');
+        $footer->image            = false;
+        if($footer->image_type == 'file') {
+            $img_file = get_field('footer_img_file', 'site_settings');
+            $footer->image = '<img src="' . esc_url_raw($img_file['sizes']['medium']) .  '" alt="' . $img_file['alt'] . '" class="footer_form_img" />';
+        } elseif($footer->image_type == 'svg') {
+            $footer->image = get_field('footer_img_svg', 'site_settings');
+        }
+
+        return json_decode(json_encode($footer));
     }
 
     public static function getTestimonial($post_id) {

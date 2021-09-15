@@ -1,4 +1,4 @@
-<aside class="footer-signup" style="background-image:url({!! $footer->background_image->url !!});background-size:cover;background-position: center center">
+<aside class="footer-signup" style="background-image:url({!! $footer->background_image ? $footer->background_image->url : '' !!});background-size:cover;background-position: center center">
   <div class="grid-container">
     <div class="grid-x grid-margin-x grid-margin-y align-center-middle">
       <div class="cell medium-8 footer-signup__wrap">
