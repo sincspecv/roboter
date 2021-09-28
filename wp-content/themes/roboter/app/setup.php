@@ -71,6 +71,18 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/main.css'));
+
+    /**
+     * Custom image sizes
+     * @see https://developer.wordpress.org/reference/functions/add_image_size/
+     */
+    add_image_size('column_icon', 238, 238, true);
+    add_image_size('hero', 1900, 0, false);
+
+    /**
+     * Initialize shortcodes
+     */
+    Theme\Shortcodes::init();
 }, 20);
 
 /**
