@@ -19,6 +19,8 @@ class Filters {
 				'data-*' => true,
 				'aria-*' => true,
 				'role' => true,
+				'style' => true,
+				'class' =>  true,
 			];
 
 			$tags['iframe'] = [
@@ -30,25 +32,37 @@ class Filters {
 				'image' => true,
 			];
 			$tags['svg'] = [
-				'style' => true,
-				'class' => true,
-				'id' => true,
-				'aria-hidden' => true,
+				'style'           => true,
+				'class'           => true,
+				'id'              => true,
+				'aria-hidden'     => true,
 				'aria-labelledby' => true,
-				'xmlns' => true,
-				'width' => true,
-				'height' => true,
-				'viewbox' => true,
+				'xmlns'           => true,
+				'width'           => true,
+				'height'          => true,
+				'viewbox'         => true,
 			];
 			$tags['polygon'] = [
-				'points' => true,
-				'fill' => true,
+				'points'            => true,
+				'fill'              => true,
+				'transform'         => true,
+				'stroke-miterlimit' => true,
+				'stroke-width'      => true,
+				'stroke'            => true,
+			];
+			$tags['polyline'] = [
+				'points'            => true,
+				'fill'              => true,
+				'transform'         => true,
+				'stroke-miterlimit' => true,
+				'stroke-width'      => true,
+				'stroke'            => true,
 			];
 			$tags['defs'] = [];
 			$tags['style'] = [];
 			$tags['g'] =[
-				'fill' => true,
-				'class' => true,
+				'fill'    => true,
+				'class'   => true,
 				'opacity' => true,
 			];
 			$tags['clippath'] = [
@@ -57,10 +71,14 @@ class Filters {
 			];
 			$tags['title'] = [];
 			$tags['path']  = [
-				'd' => true,
-				'fill' => true,
+				'd'         => true,
+				'fill'      => true,
 				'fill-rule' => true,
-				'class' => true,
+				'class'     => true,
+				'transform' => true,
+				'stroke-miterlimit' => true,
+				'stroke-width' => true,
+				'stroke'    => true,
 			];
 			$tags['mask'] = [
 				'id' => true,
@@ -73,6 +91,7 @@ class Filters {
 			$tags['lineargradient'] = [
 				'class'         => true,
 				'gradientunits' => true,
+				'stroke-miterlimit' => true,
 				'id'            => true,
 				'x1'            => true,
 				'x2'            => true,
@@ -94,11 +113,30 @@ class Filters {
 				'height'       => true,
 				'rx'           => true,
 				'stroke-width' => true,
+				'stroke-miterlimit' => true,
 				'stroke'       => true,
 				'transform'    => true,
 				'width'        => true,
 				'x'            => true,
 				'y'            => true,
+			];
+			$tags['line'] = [
+				'class'        => true,
+				'fill-opacity' => true,
+				'fill'         => true,
+				'height'       => true,
+				'rx'           => true,
+				'stroke-width' => true,
+				'stroke-miterlimit' => true,
+				'stroke'       => true,
+				'transform'    => true,
+				'width'        => true,
+				'x'            => true,
+				'y'            => true,
+				'x1'            => true,
+				'y1'            => true,
+				'x2'            => true,
+				'y2'            => true,
 			];
 			$tags['circle'] = [
 				'class' => true,
@@ -131,8 +169,6 @@ class Filters {
 				'id'    => true,
 				'style' => true,
 			];
-
-			$tags = apply_filters('tfr_modified_allowed_tags', $tags);
 
 			foreach ($tags as $tag => &$value) {
 				$value = array_merge($value, $global_atts);
