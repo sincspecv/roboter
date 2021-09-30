@@ -286,7 +286,7 @@ class SiteSettings {
 					'type'    => 'select',
 					'name'    => 'footer_form',
 					'label'   => __('Form', Plugin::TEXT_DOMAIN),
-					'choices' => Util::getGFForms(),
+					'choices' => Util::getGFForms(true),
 					'wrapper' => [
 						'width' => '30%'
 					]
