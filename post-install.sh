@@ -41,6 +41,9 @@ function wp_setup(){
     wp db create --path=wp
     wp core install --url="http://${PWD##*/}.loc" --title="$site_name" --admin_name="$admin_name" --admin_password="$admin_password" --admin_email="test@test.com" --path=wp
     wp theme activate $site_slug/resources --path=wp
+}
+
+function wp_plugins_and_rewrite(){
     wp plugin activate --all --path=wp
     wp rewrite structure '/%postname%/'
 }
@@ -71,6 +74,7 @@ source env.ini
 update_dir_names
 if [[ -z "$CI" ]]; then
     wp_setup
+    wp_plugins_and_rewrite
     compile_assets
 fi
 update_theme_info
