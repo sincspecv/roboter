@@ -6,7 +6,7 @@ RESET='\033[0m' # No Color
 
 url="http://${PWD##*/}.loc"
 
-# NPM Install and compile assets
+# Yarn Install and compile assets
 function compile_assets(){
     cd ./wp-content/themes/$site_slug/ || exit
     composer install
@@ -21,9 +21,9 @@ function update_theme_info() {
 }
 
 function update_browsersync_url(){
-    cd ./wp-content/themes/$site_slug/resources/assets || exit
-    sed -i '' -e "s|\"publicPath\": \"/wp-content/themes/roboter\"|\"publicPath\": \"/wp-content/themes/$site_slug\"|g" config.json
-    sed -i '' -e "s|\"devUrl\": \"http://roboter.loc\"|\"devUrl\": \"$url\"|g" config.json
+    cd ./wp-content/themes/$site_slug/ || exit
+    sed -i '' -e "s|\.proxy\( \"http://roboter.loc\": \.proxy\( \"http://roboter.loc/$site_slug\"|g" bud.config.mjs
+    sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" config.json
     cd -
 }
 
@@ -64,6 +64,8 @@ if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     echo -e "$RESET"
     exit 1
 fi
+
+nvm use --lts
 
 source env.ini
 update_dir_names
