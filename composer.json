@@ -13,8 +13,8 @@
     "php": "^8.0",
     "roots/acorn": "^2.1.2",
     "sincspecv/wp-acf-to-post": "0.1.6",
-    "tfr/advanced-custom-fields-pro": "5.10.2",
-    "tfr/gravityforms": "2.5.12",
+    "tfr/advanced-custom-fields-pro": "5.11.1",
+    "tfr/gravityforms": "2.6.5",
     "littlebizzy/speed-demon": "1.4.0",
     "roots/soil": "^3.9",
     "wpackagist-plugin/seo-by-rank-math": "dev-trunk",
@@ -32,14 +32,19 @@
     },
     {
       "type": "vcs",
-      "url": "git@gitlab.com:sincspecv/gravityforms.git"
+      "url": "git@github.com:sincspecv/gravityforms.git"
     },
     {
       "type": "vcs",
-      "url": "git@gitlab.com:sincspecv/advanced-custom-fields-pro.git"
+      "url": "git@github.com:sincspecv/advanced-custom-fields-pro.git"
     }
   ],
   "scripts": {
     "post-install-cmd": "bash post-install.sh"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

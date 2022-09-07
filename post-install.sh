@@ -9,6 +9,7 @@ url="http://${PWD##*/}.loc"
 # Yarn Install and compile assets
 function compile_assets(){
     cd ./wp-content/themes/$site_slug/ || exit
+    nvm use --lts
     composer install
     yarn && yarn build
     cd -
@@ -22,8 +23,8 @@ function update_theme_info() {
 
 function update_browsersync_url(){
     cd ./wp-content/themes/$site_slug/ || exit
-    sed -i '' -e "s|\.proxy\( \"http://roboter.loc\": \.proxy\( \"http://roboter.loc/$site_slug\"|g" bud.config.mjs
-    sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" config.json
+    sed -i '' -e "s|.proxy(\"http://roboter.loc\": .proxy(\"$url\"|g" bud.config.mjs
+    sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" bud-critical.config.mjs
     cd -
 }
 
@@ -67,8 +68,6 @@ if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     echo -e "$RESET"
     exit 1
 fi
-
-nvm use --lts
 
 source env.ini
 update_dir_names
