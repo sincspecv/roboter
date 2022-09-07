@@ -16,15 +16,15 @@ function compile_assets(){
 }
 
 function update_theme_info() {
-  cd ./wp-content/themes/$site_slug/resources || exit
+  cd ./wp-content/themes/$site_slug/ || exit
   sed -i '' -e "s|Theme Name:         Roboter|Theme Name:         $site_name|g" style.css
   cd -
 }
 
 function update_browsersync_url(){
     cd ./wp-content/themes/$site_slug/ || exit
-    sed -i '' -e "s|.proxy(\"http://roboter.loc\": .proxy(\"$url\"|g" bud.config.mjs
     sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" bud-critical.config.mjs
+    sed -i '' -e "s|proxy(\"http://roboter.loc\")|proxy(\"$url\")|g" bud.config.mjs
     cd -
 }
 
@@ -68,6 +68,8 @@ if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     echo -e "$RESET"
     exit 1
 fi
+
+nvm use --lts
 
 source env.ini
 update_dir_names
