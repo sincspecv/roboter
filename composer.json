@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^8.0",
+    "roots/acorn": "^2.1.2",
     "sincspecv/wp-acf-to-post": "0.1.6",
     "tfr/advanced-custom-fields-pro": "5.10.2",
     "tfr/gravityforms": "2.5.12",
