@@ -1,24 +1,26 @@
 {
-  "name": "the-fancy-robot/roboter",
+  "name": "tfr/roboter",
   "description": "Boilerplate WordPress project",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
       "name": "Matthew Schroeter",
-      "email": "matthew@digitalstrike.com"
+      "email": "matt@thefancyrobot.com"
     }
   ],
   "require": {
     "php": "^7.4",
     "sincspecv/wp-acf-to-post": "0.1.6",
-    "tfr/advanced-custom-fields-pro": "5.10.2",
-    "tfr/gravityforms": "2.5.12",
+    "tfr/advanced-custom-fields-pro": "5.12.3",
+    "tfr/gravityforms": "2.6.5",
     "littlebizzy/speed-demon": "1.4.0",
     "roots/soil": "^3.9",
     "wpackagist-plugin/seo-by-rank-math": "dev-trunk",
-    "wpackagist-plugin/simple-custom-post-order": "2.5.2",
-    "wpackagist-plugin/display-html-sitemap":"1.0.5"
+    "wpackagist-plugin/simple-custom-post-order": "dev-trunk",
+    "wpackagist-plugin/display-html-sitemap":"dev-trunk",
+    "wpackagist-plugin/woocommerce": "dev-trunk",
+    "wpackagist-plugin/mailpoet": "dev-trunk"
   },
   "repositories": [
     {
@@ -31,11 +33,11 @@
     },
     {
       "type": "vcs",
-      "url": "git@gitlab.com:sincspecv/gravityforms.git"
+      "url": "git@github.com:sincspecv/advanced-custom-fields-pro.git"
     },
     {
       "type": "vcs",
-      "url": "git@gitlab.com:sincspecv/advanced-custom-fields-pro.git"
+      "url": "git@github.com:sincspecv/gravityforms.git"
     }
   ],
   "scripts": {

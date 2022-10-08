@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1f990e2049f5ad0f5f6155130a3c343",
+    "content-hash": "d92bd04047bdb51d9c774ffd7fc9a688",
     "packages": [
         {
             "name": "composer/installers",
@@ -190,16 +190,16 @@
         },
         {
             "name": "tfr/advanced-custom-fields-pro",
-            "version": "v5.10.2",
+            "version": "v5.12.3",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:sincspecv/advanced-custom-fields-pro.git",
-                "reference": "a65c4605235944173e956959c7474eaadb3acb73"
+                "url": "git@github.com:sincspecv/advanced-custom-fields-pro.git",
+                "reference": "b5fb9d3bc4e493425b52f04c286f3849777d5b30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/sincspecv%2Fadvanced-custom-fields-pro/repository/archive.zip?sha=a65c4605235944173e956959c7474eaadb3acb73",
-                "reference": "a65c4605235944173e956959c7474eaadb3acb73",
+                "url": "https://api.github.com/repos/sincspecv/advanced-custom-fields-pro/zipball/b5fb9d3bc4e493425b52f04c286f3849777d5b30",
+                "reference": "b5fb9d3bc4e493425b52f04c286f3849777d5b30",
                 "shasum": ""
             },
             "require": {
@@ -207,22 +207,23 @@
             },
             "type": "wordpress-plugin",
             "support": {
-                "issues": "https://gitlab.com/api/v4/projects/26400974/issues"
+                "source": "https://github.com/sincspecv/advanced-custom-fields-pro/tree/v5.12.3",
+                "issues": "https://github.com/sincspecv/advanced-custom-fields-pro/issues"
             },
-            "time": "2021-09-17T16:50:31-05:00"
+            "time": "2022-09-17T20:23:53+00:00"
         },
         {
             "name": "tfr/gravityforms",
-            "version": "v2.5.12",
+            "version": "v2.6.5",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:sincspecv/gravityforms.git",
-                "reference": "2e43084452b48481058c4bc384298b87bb76ba0c"
+                "url": "git@github.com:sincspecv/gravityforms.git",
+                "reference": "68c002d486c6fb392e3109d97aec1dd7e30fc205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/sincspecv%2Fgravityforms/repository/archive.zip?sha=2e43084452b48481058c4bc384298b87bb76ba0c",
-                "reference": "2e43084452b48481058c4bc384298b87bb76ba0c",
+                "url": "https://api.github.com/repos/sincspecv/gravityforms/zipball/68c002d486c6fb392e3109d97aec1dd7e30fc205",
+                "reference": "68c002d486c6fb392e3109d97aec1dd7e30fc205",
                 "shasum": ""
             },
             "require": {
@@ -230,13 +231,14 @@
             },
             "type": "wordpress-plugin",
             "support": {
-                "issues": "https://gitlab.com/api/v4/projects/26400931/issues"
+                "source": "https://github.com/sincspecv/gravityforms/tree/v2.6.5",
+                "issues": "https://github.com/sincspecv/gravityforms/issues"
             },
-            "time": "2021-10-02T09:51:32-05:00"
+            "time": "2022-08-22T02:32:39+00:00"
         },
         {
             "name": "wpackagist-plugin/display-html-sitemap",
-            "version": "1.0.5",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/display-html-sitemap/",
@@ -247,10 +249,30 @@
                 "url": "https://downloads.wordpress.org/plugin/display-html-sitemap.zip?timestamp=1592907778"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/display-html-sitemap/"
+            "homepage": "https://wordpress.org/plugins/display-html-sitemap/",
+            "time": "2020-06-23T10:22:58+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/mailpoet",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/mailpoet/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/mailpoet.zip?timestamp=1663140629"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mailpoet/",
+            "time": "2022-09-14T07:30:29+00:00"
         },
         {
             "name": "wpackagist-plugin/seo-by-rank-math",
@@ -262,39 +284,63 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.zip?timestamp=1650906697"
+                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.zip?timestamp=1663156287"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/seo-by-rank-math/",
-            "time": "2022-04-25T17:11:37+00:00"
+            "time": "2022-09-14T11:51:27+00:00"
         },
         {
             "name": "wpackagist-plugin/simple-custom-post-order",
-            "version": "2.5.2",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-custom-post-order/",
-                "reference": "tags/2.5.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.2.5.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.zip?timestamp=1627479711"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/"
+            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/",
+            "time": "2021-07-28T13:41:51+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.zip?timestamp=1663266844"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce/",
+            "time": "2022-09-15T18:34:04+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/seo-by-rank-math": 20
+        "wpackagist-plugin/seo-by-rank-math": 20,
+        "wpackagist-plugin/simple-custom-post-order": 20,
+        "wpackagist-plugin/display-html-sitemap": 20,
+        "wpackagist-plugin/woocommerce": 20,
+        "wpackagist-plugin/mailpoet": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
