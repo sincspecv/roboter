@@ -81,7 +81,7 @@ update_dir_names
 if [[ -z "$CI" ]]; then
     wp_setup
     wp_plugins_and_rewrite
-    compile_assets
+    # compile_assets
 fi
 
 update_theme_info
