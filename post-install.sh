@@ -4,8 +4,6 @@ RED='\033[0;31m'
 ORANGE='\033[0;33m'
 RESET='\033[0m' # No Color
 
-url="http://${PWD##*/}.loc"
-
 # Yarn Install and compile assets
 function compile_assets(){
     cd ./wp-content/themes/$site_slug/ || exit
@@ -72,12 +70,17 @@ fi
 nvm use --lts
 
 source env.ini
+
+[[ -z "$dev_url" ]] && url="http://${PWD##*/}.loc" || url=$dev_url
+
 update_dir_names
+
 if [[ -z "$CI" ]]; then
     wp_setup
     wp_plugins_and_rewrite
     compile_assets
 fi
+
 update_theme_info
 update_gitignore
 update_browsersync_url
