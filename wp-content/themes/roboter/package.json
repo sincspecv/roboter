@@ -5,7 +5,7 @@
     "extends @roots/browserslist-config/current"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.20.0"
   },
   "scripts": {
     "dev": "bud dev",
@@ -18,9 +18,15 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
-    "@roots/bud": "6.3.3",
-    "@roots/bud-criticalcss": "^6.3.5",
-    "@roots/bud-sass": "^6.3.5",
-    "@roots/sage": "6.3.3"
+    "@roots/bud": "6.7.3",
+    "@roots/bud-criticalcss": "^6.7.3",
+    "@roots/sage": "6.7.3"
+  },
+  "dependencies": {
+    "daisyui": "^2.51.5"
+  },
+  "volta": {
+    "node": "16.20.0",
+    "yarn": "1.22.19"
   }
 }
