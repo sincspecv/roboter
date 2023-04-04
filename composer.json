@@ -15,9 +15,7 @@
     "tfr/advanced-custom-fields-pro": "6.0.5",
     "tfr/gravityforms": "2.6.8",
     "roots/soil": "^4.1.1",
-    "wpackagist-plugin/seo-by-rank-math": "dev-trunk",
-    "wpackagist-plugin/simple-custom-post-order": "2.5.2",
-    "wpackagist-plugin/display-html-sitemap":"1.0.5"
+    "wpackagist-plugin/seo-by-rank-math": "dev-trunk"
   },
   "repositories": [
     {
