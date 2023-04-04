@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Core Functionality
-Plugin URI: https://www.digitalstrike.com
+Plugin URI: https://thefancyrobot.com
 Description: Core functionality !! DO NOT UNINSTALL !!
 Version: 1.0.0
-Author: Digital Strike
-Author URI: https://www.digitalstrike.com
-Text Domain: digital-strike
+Author: Matthew Schroeter <matthew@thefancyrobot.com>
+Author URI: https://thefancyrobot.com.com
+Text Domain: tfr
 Domain Path: /lang
 */
 

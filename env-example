@@ -3,6 +3,8 @@ site_slug="roboter"
 admin_name="thefancyrobot"
 admin_password="ARNt/ep54qXXc!=5"
 
+dev_url=
+
 db_host="127.0.0.1"
 db_port="3306"
 db_name="roboter"

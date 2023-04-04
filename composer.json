@@ -10,17 +10,12 @@
     }
   ],
   "require": {
-    "php": "^7.4",
-    "sincspecv/wp-acf-to-post": "0.1.6",
-    "tfr/advanced-custom-fields-pro": "5.12.3",
-    "tfr/gravityforms": "2.6.5",
-    "littlebizzy/speed-demon": "1.4.0",
-    "roots/soil": "^3.9",
-    "wpackagist-plugin/seo-by-rank-math": "dev-trunk",
-    "wpackagist-plugin/simple-custom-post-order": "dev-trunk",
-    "wpackagist-plugin/display-html-sitemap":"dev-trunk",
-    "wpackagist-plugin/woocommerce": "dev-trunk",
-    "wpackagist-plugin/mailpoet": "dev-trunk"
+    "php": "^8.0",
+    "sincspecv/wp-acf-to-post": "0.1.7",
+    "tfr/advanced-custom-fields-pro": "6.0.5",
+    "tfr/gravityforms": "2.6.8",
+    "roots/soil": "^4.1.1",
+    "wpackagist-plugin/seo-by-rank-math": "dev-trunk"
   },
   "repositories": [
     {
@@ -42,5 +37,13 @@
   ],
   "scripts": {
     "post-install-cmd": "bash post-install.sh"
+  },
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ],
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

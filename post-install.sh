@@ -4,26 +4,25 @@ RED='\033[0;31m'
 ORANGE='\033[0;33m'
 RESET='\033[0m' # No Color
 
-url="http://${PWD##*/}.loc"
-
-# NPM Install and compile assets
+# Yarn Install and compile assets
 function compile_assets(){
     cd ./wp-content/themes/$site_slug/ || exit
+    [[ -z nvm ]] && nvm use --lts
     composer install
     yarn && yarn build
     cd -
 }
 
 function update_theme_info() {
-  cd ./wp-content/themes/$site_slug/resources || exit
+  cd ./wp-content/themes/$site_slug/ || exit
   sed -i '' -e "s|Theme Name:         Roboter|Theme Name:         $site_name|g" style.css
   cd -
 }
 
 function update_browsersync_url(){
-    cd ./wp-content/themes/$site_slug/resources/assets || exit
-    sed -i '' -e "s|\"publicPath\": \"/wp-content/themes/roboter\"|\"publicPath\": \"/wp-content/themes/$site_slug\"|g" config.json
-    sed -i '' -e "s|\"devUrl\": \"http://roboter.loc\"|\"devUrl\": \"$url\"|g" config.json
+    cd ./wp-content/themes/$site_slug/ || exit
+    sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" bud-critical.config.mjs
+    sed -i '' -e "s|proxy(\"http://roboter.loc\")|proxy(\"$url\")|g" bud.config.mjs
     cd -
 }
 
@@ -40,7 +39,13 @@ function wp_setup(){
     wp core download --path=wp --skip-content --force --allow-root
     wp db create --path=wp
     wp core install --url="http://${PWD##*/}.loc" --title="$site_name" --admin_name="$admin_name" --admin_password="$admin_password" --admin_email="test@test.com" --path=wp
-    wp theme activate $site_slug/resources --path=wp
+
+    compile_assets
+
+    wp theme activate $site_slug --path=wp
+}
+
+function wp_plugins_and_rewrite(){
     wp plugin activate --all --path=wp
     wp rewrite structure '/%postname%/'
 }
@@ -60,17 +65,25 @@ fi
 
 if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     echo -e "$ORANGE"
-    echo "[HALTED] : .env not found -- did you forget to copy over env-example?"
+    echo "[HALTED] : env.ini not found -- did you forget to copy over env-example?"
     echo -e "$RESET"
     exit 1
 fi
 
 source env.ini
+
+[[ -z nvm ]] && nvm use --lts
+
+[[ -z "$dev_url" ]] && url="http://${PWD##*/}.loc" || url=$dev_url
+
 update_dir_names
+
 if [[ -z "$CI" ]]; then
     wp_setup
-    compile_assets
+    wp_plugins_and_rewrite
+    # compile_assets
 fi
+
 update_theme_info
 update_gitignore
 update_browsersync_url
