@@ -62,7 +62,7 @@ fi
 
 if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     echo -e "$ORANGE"
-    echo "[HALTED] : .env not found -- did you forget to copy over env-example?"
+    echo "[HALTED] : env.ini not found -- did you forget to copy over env-example?"
     echo -e "$RESET"
     exit 1
 fi
