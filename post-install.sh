@@ -39,7 +39,7 @@ function wp_setup(){
     wp core download --path=wp --skip-content --force --allow-root
     wp db create --path=wp
     wp core install --url="http://${PWD##*/}.loc" --title="$site_name" --admin_name="$admin_name" --admin_password="$admin_password" --admin_email="test@test.com" --path=wp
-    wp theme activate $site_slug/resources --path=wp
+    wp theme activate $site_slug --path=wp
 }
 
 function wp_plugins_and_rewrite(){
@@ -67,9 +67,9 @@ if [[ -z "$CI" ]] && [[ ! -f ./env.ini ]]; then
     exit 1
 fi
 
-nvm use --lts
-
 source env.ini
+
+[[ -z nvm ]] && nvm use --lts
 
 [[ -z "$dev_url" ]] && url="http://${PWD##*/}.loc" || url=$dev_url
 

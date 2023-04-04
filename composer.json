@@ -6,17 +6,15 @@
   "authors": [
     {
       "name": "Matthew Schroeter",
-      "email": "matthew@digitalstrike.com"
+      "email": "matt@thefancyrobot.com"
     }
   ],
   "require": {
     "php": "^8.0",
-    "roots/acorn": "^2.1.2",
-    "sincspecv/wp-acf-to-post": "0.1.6",
-    "tfr/advanced-custom-fields-pro": "5.11.1",
-    "tfr/gravityforms": "2.6.5",
-    "littlebizzy/speed-demon": "1.4.0",
-    "roots/soil": "^3.9",
+    "sincspecv/wp-acf-to-post": "0.1.7",
+    "tfr/advanced-custom-fields-pro": "6.0.5",
+    "tfr/gravityforms": "2.6.8",
+    "roots/soil": "^4.1.1",
     "wpackagist-plugin/seo-by-rank-math": "dev-trunk",
     "wpackagist-plugin/simple-custom-post-order": "2.5.2",
     "wpackagist-plugin/display-html-sitemap":"1.0.5"
@@ -42,6 +40,9 @@
   "scripts": {
     "post-install-cmd": "bash post-install.sh"
   },
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ],
   "config": {
     "allow-plugins": {
       "composer/installers": true
