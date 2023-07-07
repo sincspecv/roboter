@@ -21,7 +21,7 @@ function update_theme_info() {
 
 function update_browsersync_url(){
     cd ./wp-content/themes/$site_slug/ || exit
-    sed -i '' -e "s|setProxyUrl('http://roboter.test')|proxy('$url')|g" bud.config.js
+    sed -i '' -e "s|setProxyUrl('http://roboter.test')|setProxyUrl('$url')|g" bud.config.js
     sed -i '' -e "s|setPublicPath('/app/themes/roboter/public/');|setPublicPath('/app/themes/$site_slug/public/');|g" bud.config.js
     cd -
 }
