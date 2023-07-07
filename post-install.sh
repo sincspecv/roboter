@@ -21,8 +21,8 @@ function update_theme_info() {
 
 function update_browsersync_url(){
     cd ./wp-content/themes/$site_slug/ || exit
-    sed -i '' -e "s|src: \"http://roboter.loc\"|src: \"$url\"|g" bud-critical.config.mjs
-    sed -i '' -e "s|proxy(\"http://roboter.loc\")|proxy(\"$url\")|g" bud.config.mjs
+    sed -i '' -e "s|setProxyUrl('http://roboter.test')|proxy('$url')|g" bud.config.js
+    sed -i '' -e "s|setPublicPath('/app/themes/roboter/public/');|setPublicPath('/app/themes/$site_slug/public/');|g" bud.config.js
     cd -
 }
 
@@ -38,7 +38,7 @@ function update_dir_names(){
 function wp_setup(){
     wp core download --path=wp --skip-content --force --allow-root
     wp db create --path=wp
-    wp core install --url="http://${PWD##*/}.loc" --title="$site_name" --admin_name="$admin_name" --admin_password="$admin_password" --admin_email="test@test.com" --path=wp
+    wp core install --url="http://${PWD##*/}.test" --title="$site_name" --admin_name="$admin_name" --admin_password="$admin_password" --admin_email="test@test.com" --path=wp
 
     compile_assets
 
@@ -74,14 +74,14 @@ source env.ini
 
 [[ -z nvm ]] && nvm use --lts
 
-[[ -z "$dev_url" ]] && url="http://${PWD##*/}.loc" || url=$dev_url
+[[ -z "$dev_url" ]] && url="http://${PWD##*/}.test" || url=$dev_url
 
 update_dir_names
 
 if [[ -z "$CI" ]]; then
     wp_setup
     wp_plugins_and_rewrite
-    # compile_assets
+    compile_assets
 fi
 
 update_theme_info

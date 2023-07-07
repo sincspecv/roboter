@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fca93c0936630aafd18ab5719404ac0f",
+    "content-hash": "a906af542b8495c614fb80cfea88e3e7",
     "packages": [
         {
             "name": "composer/installers",
@@ -186,30 +186,6 @@
             "time": "2022-05-04T19:47:43+00:00"
         },
         {
-            "name": "tfr/advanced-custom-fields-pro",
-            "version": "v6.0.5",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:sincspecv/advanced-custom-fields-pro.git",
-                "reference": "f39b06f70f3c91ccc82522acef491b9f7547916d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sincspecv/advanced-custom-fields-pro/zipball/f39b06f70f3c91ccc82522acef491b9f7547916d",
-                "reference": "f39b06f70f3c91ccc82522acef491b9f7547916d",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "v1.0.6"
-            },
-            "type": "wordpress-plugin",
-            "support": {
-                "source": "https://github.com/sincspecv/advanced-custom-fields-pro/tree/v6.0.5",
-                "issues": "https://github.com/sincspecv/advanced-custom-fields-pro/issues"
-            },
-            "time": "2022-12-03T04:40:24+00:00"
-        },
-        {
             "name": "tfr/gravityforms",
             "version": "v2.6.8",
             "source": {
@@ -235,34 +211,46 @@
         },
         {
             "name": "wpackagist-plugin/seo-by-rank-math",
-            "version": "dev-trunk",
+            "version": "1.0.118",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/seo-by-rank-math/",
-                "reference": "trunk"
+                "reference": "tags/1.0.118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.zip?timestamp=1680285006"
+                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.1.0.118.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/seo-by-rank-math/",
-            "time": "2023-03-31T17:50:06+00:00"
+            "homepage": "https://wordpress.org/plugins/seo-by-rank-math/"
+        },
+        {
+            "name": "wpengine/advanced-custom-fields-pro",
+            "version": "6.1.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.1.7"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "replace": {
+                "wpackagist-plugin/advanced-custom-fields": "self.version"
+            },
+            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wpackagist-plugin/seo-by-rank-math": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0"
+        "php": "^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
