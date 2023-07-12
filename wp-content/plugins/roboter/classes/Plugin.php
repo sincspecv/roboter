@@ -8,9 +8,9 @@ class Plugin {
     /**
      * Plugin version
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.5.0';
 
-    const TEXT_DOMAIN = 'digital-strike';
+    const TEXT_DOMAIN = 'tfr';
 
     /**
      * Plugin Path

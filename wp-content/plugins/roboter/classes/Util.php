@@ -27,4 +27,15 @@ class Util {
 
 		return $form_choices;
 	}
+
+    public static function render_block_view($attributes, $content = '', $wp_block = null) {
+        $name = str_replace('acf/', '', $attributes['name']);
+        $view = "{$attributes['path']}/{$name}.blade.php";
+        $fields = json_decode(json_encode(get_fields($attributes['id'])));
+
+        if (file_exists($view)) {
+//            echo view("TFR::blocks/{$name}", ['block' => $attributes, 'fields' => $fields]);
+            echo view($view, ['block' => $attributes, 'fields' => $fields]);
+        }
+    }
 }

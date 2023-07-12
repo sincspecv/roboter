@@ -1,0 +1,52 @@
+{
+    "name": "test-view",
+    "title": "Test View",
+    "description": "A simple test block to make sure shit is working",
+    "style": "",
+    "category": "text",
+    "icon": "cover-image",
+    "apiVersion": 2,
+    "keywords": [
+        "tfr",
+        "test"
+    ],
+    "acf": {
+        "mode": "auto",
+        "postTypes": [
+            "page"
+        ],
+        "renderCallback": "TFR\\Util::render_block_view"
+    },
+    "styles": [
+        {
+            "name": "default",
+            "label": "Default",
+            "isDefault": true
+        },
+        {
+            "name": "inner",
+            "label": "Second Option"
+        }
+    ],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "alignText": false,
+        "spacing": false,
+        "typography": false,
+        "fullHeight": true
+    },
+    "example": {
+        "attributes": {
+            "data": {
+                "preview": true
+            }
+        }
+    }
+}

@@ -37,15 +37,29 @@ class Bootstrap {
      */
     public static function hooks() {
         // Hide ACF From Admin Menu
-        add_action('admin_menu', function() {
-            remove_menu_page('edit.php?post_type=acf-field-group');
-        });
+//        add_action('admin_menu', function() {
+//            remove_menu_page('edit.php?post_type=acf-field-group');
+//        });
+
+        add_action('init', [__CLASS__, 'registerBlocks'], 4);
     }
 
     /**
      * Add all WordPress filters
      */
     public static function filters() {
+        // Add the plugin views directory to Acorn
+        add_action( 'init', function() {
+            if ( function_exists( '\Roots\view' ) ) {
+                \Roots\view()->addNamespace('TFR', Plugin::$dir . '/views/');
+
+                // Shortcode to test proper rendering
+                add_shortcode( 'view-shortcode', function( $args ) {
+                    return \Roots\view( 'TFR::blocks/test-view', ['name' => 'James'] );
+                } );
+            }
+        } );
+
         // Move Yoast to the bottom of the edit screen
         add_filter( 'wpseo_metabox_prio', function() {
             return 'low';
@@ -141,6 +155,46 @@ class Bootstrap {
         define('DASHBOARD_CLEANUP_WOOCOMMERCE_FOOTER_TEXT', true);
         define('DASHBOARD_CLEANUP_WOOCOMMERCE_MARKETPLACE_SUGGESTIONS', true);
         define('DASHBOARD_CLEANUP_WOOCOMMERCE_TRACKER', true);
+    }
+
+    public static function registerBlocks() {
+        $blocks = array_filter(glob(Plugin::$dir . '/views/blocks/*'), 'is_dir');
+
+        if (empty($blocks)) {
+            return false;
+        }
+
+        foreach($blocks as $blockPath) {
+            $pathArr = explode('/', $blockPath);
+            $blockName = $pathArr[count($pathArr) - 1];
+            $fileName = "{$blockName}.blade.php";
+            $view = "{$blockPath}/{$fileName}";
+
+            // Make sure we have a blade template
+            if (file_exists($view)) {
+                $blockJsonFile = "{$blockPath}/block.json";
+
+                // Go old school if there is no block.json file
+                if (!file_exists($blockJsonFile)) {
+                    // Set the block args before registering
+                    $blockArgs = apply_filters("tfr/blocks/{$blockName}/args", [
+                            'name' => $blockName,
+                            'title' => ucwords(str_replace(['-', '_'], ' ', $blockName)),
+                            'render_callback' => function ($block) use ($view) {
+                                echo view($view, ['block' => $block, 'fields' => get_fields($block['id'])]);
+                            }
+                        ]);
+
+                    acf_register_block_type($blockArgs);
+
+                    // We're done. don't go any further. Hacky? Maybe.
+                    return true;
+                }
+
+                // We have a block.json file so let's do this the "right" way
+                register_block_type($blockPath);
+            }
+        }
     }
 
     public static function initTemplateEngine() {
