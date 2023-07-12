@@ -15,8 +15,7 @@
     "wpengine/advanced-custom-fields-pro": "6.1.7",
     "tfr/gravityforms": "2.6.8",
     "roots/soil": "^4.1.1",
-    "wpackagist-plugin/seo-by-rank-math": "1.0.118",
-    "roots/acorn": "^3.2"
+    "wpackagist-plugin/seo-by-rank-math": "1.0.118"
   },
   "repositories": [
     {
@@ -46,6 +45,13 @@
     "allow-plugins": {
       "composer/installers": true
     },
-    "vendor-dir": "wp-content/plugins/roboter/vendor"
+    "vendor-dir": "wp-content/plugins/roboter-ten/vendor"
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "TFR\\Providers\\RoboterProvider"
+      ]
+    }
   }
 }
