@@ -126,7 +126,7 @@ class Bootstrap {
         define('DISABLE_XML_RPC', true);
         define('HEADER_CLEANUP', true);
         define('INLINE_STYLES', false);
-        define('MINIFY_HTML', true);
+        define('MINIFY_HTML', false);
         define('MINIFY_HTML_INLINE_STYLES', true);
         define('MINIFY_HTML_INLINE_STYLES_COMMENTS', true);
         define('MINIFY_HTML_REMOVE_COMMENTS', true);
@@ -158,7 +158,7 @@ class Bootstrap {
     }
 
     public static function registerBlocks() {
-        $blocks = array_filter(glob(Plugin::$dir . '/views/blocks/*'), 'is_dir');
+        $blocks = array_filter(glob(Plugin::$dir . '/resources/views/blocks/*'), 'is_dir');
 
         if (empty($blocks)) {
             return false;
@@ -177,7 +177,8 @@ class Bootstrap {
                 // Go old school if there is no block.json file
                 if (!file_exists($blockJsonFile)) {
                     // Set the block args before registering
-                    $blockArgs = apply_filters("tfr/blocks/{$blockName}/args", [
+                    add_action('acf/init', function() {
+                        $blockArgs = apply_filters("tfr/blocks/{$blockName}/args", [
                             'name' => $blockName,
                             'title' => ucwords(str_replace(['-', '_'], ' ', $blockName)),
                             'render_callback' => function ($block) use ($view) {
@@ -185,7 +186,8 @@ class Bootstrap {
                             }
                         ]);
 
-                    acf_register_block_type($blockArgs);
+                        acf_register_block_type($blockArgs);
+                    });
 
                     // We're done. don't go any further. Hacky? Maybe.
                     return true;
