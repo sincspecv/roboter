@@ -1,3 +1,90 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  :root,
+  [data-theme] {
+    background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
+    color: var(--body-text-color, black);
+  }
+
+  html {
+    font-family: "Fira Sans", system-ui, sans-serif;
+    box-sizing: border-box;
+    font-size: calc(14px + 4 * ((100vw - 320px) / 960));
+    overscroll-behavior: none;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6{
+    font-family: Poppins, system-ui, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-weight: normal;
+  }
+
+  body {
+    min-height: 100vh;
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media all and (min-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-none;
+  }
+
+  .btn-outline {
+    @apply border-2;
+  }
+
+  .card {
+    @apply rounded-none;
+  }
+
+  [data-selected-option=true] {
+    @apply !border-l-primary text-primary;
+  }
+
+  .menu-horizontal ~ a {
+    @apply font-bold;
+  }
+}

@@ -13,7 +13,7 @@ class Hero extends Layout {
 		parent::__construct();
 
 		$this->setName( 'hero' );
-    $this->setLabel( __( 'Hero', Plugin::TEXT_DOMAIN ) );
+        $this->setLabel( __( 'Hero', Plugin::TEXT_DOMAIN ) );
 		$this->setRepeaters( ['modules', 'post_modules'] );
 	}
 

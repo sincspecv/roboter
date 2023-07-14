@@ -18,6 +18,8 @@ class Bootstrap {
         self::filters();
         self::globals();
 
+        define('DISALLOW_FILE_EDIT', true);
+
         /**
          * Options Pages
          */
@@ -73,6 +75,7 @@ class Bootstrap {
 	            Groups\LandingPage::class,
 	            Groups\LandingPageFooter::class,
 	            Groups\Testimonial::class,
+	            Groups\TestView::class,
             ];
         });
 
@@ -126,7 +129,7 @@ class Bootstrap {
         define('DISABLE_XML_RPC', true);
         define('HEADER_CLEANUP', true);
         define('INLINE_STYLES', false);
-        define('MINIFY_HTML', false);
+        define('MINIFY_HTML', true);
         define('MINIFY_HTML_INLINE_STYLES', true);
         define('MINIFY_HTML_INLINE_STYLES_COMMENTS', true);
         define('MINIFY_HTML_REMOVE_COMMENTS', true);

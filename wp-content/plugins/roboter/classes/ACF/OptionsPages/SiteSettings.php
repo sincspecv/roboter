@@ -272,26 +272,6 @@ class SiteSettings {
 			'menu_order' => 6,
 			'fields'     => [
 				[
-					'key'      => self::FOOTER_GROUP . '_form_title',
-					'type'     => 'text',
-					'name'     => 'footer_form_title',
-					'label'    => __('Form Title', Plugin::TEXT_DOMAIN),
-					'required' => 1,
-					'wrapper'  => [
-						'width' => '50%'
-					]
-				],
-				[
-					'key'     => self::FOOTER_GROUP . '_form',
-					'type'    => 'select',
-					'name'    => 'footer_form',
-					'label'   => __('Form', Plugin::TEXT_DOMAIN),
-					'choices' => Util::getGFForms(true),
-					'wrapper' => [
-						'width' => '30%'
-					]
-				],
-				[
 					'key'   => self::FOOTER_GROUP . '_image_type',
 					'label' => __('Type of image', Plugin::TEXT_DOMAIN),
 					'name'  => 'footer_img_type',
