@@ -4,6 +4,7 @@
 namespace TFR;
 
 
+use TFR\ACF\Blocks;
 use TFR\ACF\Groups;
 use TFR\ACF\Layouts;
 use TFR\ACF\OptionsPages;
@@ -28,10 +29,10 @@ class Bootstrap {
         /**
          * Post Types
          */
-        PostTypes\Services::init();
-        PostTypes\Template::init();
-        PostTypes\Testimonial::init();
-        PostTypes\LandingPageTemplate::init();
+//        PostTypes\Services::init();
+//        PostTypes\Template::init();
+//        PostTypes\Testimonial::init();
+//        PostTypes\LandingPageTemplate::init();
     }
 
     /**
@@ -67,17 +68,25 @@ class Bootstrap {
             return 'low';
         });
 
-        // ACF Groups
+        // ACF Blocks
         add_filter( 'acf_to_post/init/groups', function() {
             return [
-                Groups\Page::class,
-                Groups\Post::class,
-	            Groups\LandingPage::class,
-	            Groups\LandingPageFooter::class,
-	            Groups\Testimonial::class,
-	            Groups\TestView::class,
+                Blocks\TestView::class,
+                Blocks\Hero::class,
             ];
         });
+
+        // ACF Groups
+//        add_filter( 'acf_to_post/init/groups', function() {
+//            return [
+//                Groups\Page::class,
+//                Groups\Post::class,
+//	            Groups\LandingPage::class,
+//	            Groups\LandingPageFooter::class,
+//	            Groups\Testimonial::class,
+//	            ACF\Blocks\TestView::class,
+//            ];
+//        });
 
         // ACF Repeater Fields
         add_filter( 'acf_to_post/init/fields', function() {

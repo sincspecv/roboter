@@ -1,14 +1,15 @@
 {
-    "name": "test-view",
-    "title": "Test View",
-    "description": "A simple test block to make sure shit is working",
+    "name": "hero",
+    "title": "Hero",
+    "description": "A full-width block with a background image, title, content, and button",
     "style": "",
     "category": "text",
-    "icon": "shortcode",
+    "icon": "cover-image",
     "apiVersion": 2,
     "keywords": [
         "tfr",
-        "test"
+        "hero",
+        "title"
     ],
     "acf": {
         "mode": "auto",
@@ -20,12 +21,13 @@
     "styles": [
         {
             "name": "default",
-            "label": "Default",
+            "label": "With Background Image",
             "isDefault": true
         },
         {
-            "name": "inner",
-            "label": "Second Option"
+            "name": "color-background",
+            "label": "Solid Color BG",
+            "isDefault": false
         }
     ],
     "supports": {

@@ -1,14 +1,15 @@
 {
-    "name": "test-view",
-    "title": "Test View",
-    "description": "A simple test block to make sure shit is working",
+    "name": "hero-form",
+    "title": "Hero with Form",
+    "description": "A full-width block with a background image, title, content, and form",
     "style": "",
     "category": "text",
-    "icon": "shortcode",
+    "icon": "cover-image",
     "apiVersion": 2,
     "keywords": [
         "tfr",
-        "test"
+        "hero",
+        "title"
     ],
     "acf": {
         "mode": "auto",
@@ -22,10 +23,6 @@
             "name": "default",
             "label": "Default",
             "isDefault": true
-        },
-        {
-            "name": "inner",
-            "label": "Second Option"
         }
     ],
     "supports": {
