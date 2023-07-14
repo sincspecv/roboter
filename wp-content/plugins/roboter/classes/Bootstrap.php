@@ -177,8 +177,11 @@ class Bootstrap {
             if (file_exists($view)) {
                 $blockJsonFile = "{$blockPath}/block.json";
 
-                // Go old school if there is no block.json file
-                if (!file_exists($blockJsonFile)) {
+                if (file_exists($blockJsonFile)) {
+                    // We have a block.json file so let's do this the "right" way
+                    register_block_type($blockPath);
+                } else {
+                    // Go old school if there is no block.json file
                     // Set the block args before registering
                     add_action('acf/init', function() {
                         $blockArgs = apply_filters("tfr/blocks/{$blockName}/args", [
@@ -191,13 +194,14 @@ class Bootstrap {
 
                         acf_register_block_type($blockArgs);
                     });
-
-                    // We're done. don't go any further. Hacky? Maybe.
-                    return true;
                 }
 
-                // We have a block.json file so let's do this the "right" way
-                register_block_type($blockPath);
+                //And let's make sure our block is whitelisted
+                add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_context ) use($blockName) : array {
+                    $allowed_blocks[] = "acf/{$blockName}";
+
+                    return $allowed_blocks;
+                }, 199, 2 );
             }
         }
     }

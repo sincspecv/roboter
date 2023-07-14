@@ -15,6 +15,7 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+    bundle('blocks')->enqueue();
 }, 100);
 
 /**
@@ -25,6 +26,18 @@ add_action('wp_enqueue_scripts', function () {
 add_action('enqueue_block_editor_assets', function () {
     bundle('editor')->enqueue();
 }, 100);
+
+/*
+ * Add frontend styles as editor styles.
+ * Must be added by relative path (not remote URI)
+ * (@see https://core.trac.wordpress.org/ticket/55728#ticket).
+ *
+ * @return void
+ */
+add_action('after_setup_theme', function () {
+    $relAppCssPath = asset('app.css')->relativePath(get_theme_file_path());
+    add_editor_style($relAppCssPath);
+});
 
 /**
  * Register the initial theme setup.
@@ -45,13 +58,6 @@ add_action('after_setup_theme', function () {
     ]);
 
     /**
-     * Disable full-site editing support.
-     *
-     * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
-     */
-    remove_theme_support('block-templates');
-
-    /**
      * Register the navigation menus.
      *
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
@@ -65,6 +71,7 @@ add_action('after_setup_theme', function () {
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-the-default-block-patterns
      */
+    add_theme_support('block-editor');
     remove_theme_support('core-block-patterns');
 
     /**
