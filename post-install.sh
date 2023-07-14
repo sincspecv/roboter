@@ -26,6 +26,12 @@ function update_browsersync_url(){
     cd -
 }
 
+function update_tailwind_config(){
+    cd ./wp-content/themes/$site_slug/ || exit
+    sed -i '' -e "s|../../plugins/roboter|../../plugins/$site_slug|g" tailwind.config.cjs
+    cd -
+}
+
 function update_gitignore(){
     sed -i '' -e "s|roboter|$site_slug|g" ./.gitignore
 }
