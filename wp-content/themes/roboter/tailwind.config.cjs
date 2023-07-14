@@ -2,7 +2,7 @@ const buildConfig = require(`./build.config.cjs`);
 
 // https://tailwindcss.com/docs/configuration
 module.exports = {
-  content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}', '../../plugins/roboter-ten/resources/views/**/*.{php,vue,js}'],
+  content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}', '../../plugins/roboter/resources/views/**/*.{php,vue,js}'],
   daisyui: {
     themes: [
       {
@@ -16,6 +16,9 @@ module.exports = {
     spacing: buildConfig.spacing,
     sizing: buildConfig.sizing,
     darkMode: false,
+    container: {
+      padding: buildConfig.spacing.md,
+    },
     extend: {
       textSizes: buildConfig.textSizes,
       colors: buildConfig.colors
